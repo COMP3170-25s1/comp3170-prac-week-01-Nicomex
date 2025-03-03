@@ -39,13 +39,13 @@ public class Scene {
 		// @formatter:off
 		
 		vertices = new Vector4f[] {
-			new Vector4f(1.0f, 1.0f, 0.0f, 1.0f),
-			new Vector4f(-1.0f, 1.0f, 0.0f, 1.0f),
-			new Vector4f(-1.0f, -1.0f, 0.0f, 1.0f),
+			new Vector4f(1.0f, 1.0f, 0.0f, 1.0f), //top right corner
+			new Vector4f(-1.0f, 1.0f, 0.0f, 1.0f), //top left corner
+			new Vector4f(-1.0f, -1.0f, 0.0f, 1.0f), //bottom left corner
 			
-			new Vector4f(-1.0f, -1.0f, 0.0f, 1.0f),
-			new Vector4f(1.0f, -1.0f, 0.0f, 1.0f),
-			new Vector4f(1.0f, 1.0f, 0.0f, 1.0f),
+			new Vector4f(-1.0f, -1.0f, 0.0f, 1.0f), //bottom left corner
+			new Vector4f(1.0f, -1.0f, 0.0f, 1.0f), //bottom right corner
+			new Vector4f(1.0f, 1.0f, 0.0f, 1.0f), //top right corner
 		};
 			
 		// @formatter:on
@@ -66,7 +66,7 @@ public class Scene {
 		shader.setAttribute("a_position", vertexBuffer);
 		
 		// write the colour value into the u_colour uniform. For now, we will write colours as Vec3s (R,G,B).
-		Vector3f colour = new Vector3f(1.0f, 0.0f, 0.f); // RED
+		Vector3f colour = new Vector3f(0.0f, 0.0f, 0.f); // RED
 		shader.setUniform("u_colour", colour);
 		
 		Vector2f screenSize = new Vector2f(screenWidth, screenHeight);
